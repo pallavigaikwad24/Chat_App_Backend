@@ -30,19 +30,19 @@ module.exports = {
         allowNull: true
       },
       file_url: {
-        type: Sequelize.STRING(255),
+        type: Sequelize.JSONB,
         allowNull: true
       },
       filename: {
-        type: Sequelize.STRING(255),
+        type: Sequelize.JSONB,
         allowNull: true
       },
       file_type: {
-        type: Sequelize.STRING(255),
+        type: Sequelize.JSONB,
         allowNull: true
       },
       file_size: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.JSONB,
         allowNull: true
       },
       is_deleted: {

@@ -13,7 +13,10 @@ const downloadFile = async (req, res) => {
     try {
         const file = await getModelInfo(getFileArgs(req.params.chat_id));
 
-        const downloadPath = path.join(__dirname, "../../../public/uploads/fileSend", file?.sender_id.toString(), file?.filename);
+        const downloadPath = path.join(__dirname, "../../../public/uploads/fileSend", file?.sender_id.toString(), req.params.chat_id.toString(), req.params.filename);
+
+        console.log("DOwnload path::", downloadPath);
+
         if (!fs.existsSync(downloadPath)) {
             return res.status(HTTP_CODE.NOT_FOUND.code).send("File does not exist");
         }

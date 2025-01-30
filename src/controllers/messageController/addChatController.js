@@ -7,6 +7,8 @@ const addChatController = async (req, res) => {
     try {
         const { receiver, content, file_type, filename, file_url, file_size } = req.body;
 
+        console.log("Receiver:::", receiver);
+
         const receiverArgs = {
             modelName: Users,
             methodType: 'findOne',

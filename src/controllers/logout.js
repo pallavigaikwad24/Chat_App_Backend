@@ -5,9 +5,6 @@ const HTTP_CODE = require("../service/enum");
 
 const logoutController = async (req, res) => {
   try {
-    const arguments = { modelName: NotificationToken, methodType: "destroy", args: { where: { user_id: req.user.id } } };
-    await getModelInfo(arguments);
-
     // Using Passport
     req.logout(function (err) {
       if (err) {

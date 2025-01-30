@@ -31,9 +31,9 @@ route.post("/save-socket-id", isUserAuthenticated, saveSocketIdController);
 
 route.get("/loading", isUserAuthenticated, loaderController);
 
-route.post("/file-input-message/:id", isUserAuthenticated, uploads.single("fileInput"), fileInputRouter);
+route.post("/file-input-message/:id", isUserAuthenticated, uploads.array("fileInput"), fileInputRouter);
 
-route.get("/download-file/:chat_id", isUserAuthenticated, downloadFile);
+route.get("/download-file/:chat_id/:filename", isUserAuthenticated, downloadFile);
 
 route.post("/add-chat", isUserAuthenticated, receiverChatValidMiddleware(), validationResultFun, addChatController);
 
