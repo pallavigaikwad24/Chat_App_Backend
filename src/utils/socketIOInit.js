@@ -16,9 +16,9 @@ const socketIOInit = (io) => {
             io.emit("receive_message", message);
         });
 
-        // socket.on("emoji_reaction", (message) => {
-        //     io.emit("receive_message", message);
-        // });
+        socket.on("react_to_message", (message) => {
+            io.emit("receive_message", message);
+        });
 
         socket.on("join_group", (groupId) => {
             socket.join(groupId);
